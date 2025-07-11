@@ -74,7 +74,7 @@ async function convertToPdf(zip, bookCode) {
 
     for (const filename of extractedFiles) {
         const pdfBytes = TEMP_FOLDER[filename];
-        const pdf = await PDFDocument.load(pdfBytes);
+        const pdf = await PDFDocument.load(pdfBytes, { ignoreEncryption: true });
         const copiedPages = await mergedPdf.copyPages(pdf, pdf.getPageIndices());
         copiedPages.forEach((page) => mergedPdf.addPage(page));
     }
