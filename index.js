@@ -116,7 +116,7 @@ window.onload = async () => {
 
 dlBtn.addEventListener('click', async () => {
     const bookCode = bookCodeInput.value;
-    window.location.href = "index.html?book_code=" + bookCode;
+    window.location.href = "?book_code=" + bookCode;
     // loadBookCover(bookCode);
     // await downloadBook(bookCode);
     // setStatus("Started download!");
